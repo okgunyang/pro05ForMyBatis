@@ -1,6 +1,0 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
- xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-<div id="hd">
-	<h1>헤더</h1>
-</div>
