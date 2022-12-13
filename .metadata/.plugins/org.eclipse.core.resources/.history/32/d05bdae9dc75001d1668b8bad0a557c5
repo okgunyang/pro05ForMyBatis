@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<div id="logo">
+	<h1>로고</h1>
+</div>
+<nav th:fragment="gnb" id="gnb">
+	<h1>메인 메뉴</h1>
+</nav>
+<nav th:fragment="tnb" id="tnb">
+	<h1>상단 메뉴</h1>
+</nav>
