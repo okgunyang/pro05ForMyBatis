@@ -1,0 +1,7 @@
+package com.shop.myapp.dao;
+
+@Component
+@Mapper
+public interface RoleMapper {
+    Role getRoleInfo(@Param("role") String role);
+}

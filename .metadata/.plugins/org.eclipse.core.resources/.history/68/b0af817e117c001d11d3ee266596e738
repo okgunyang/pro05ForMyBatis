@@ -1,0 +1,13 @@
+package com.shop.myapp.dao;
+
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Component;
+
+import com.shop.myapp.entity.Role;
+
+@Component
+@Mapper
+public interface UserRoleMapper {
+    void setUserRoleInfo(@Param("param") Role param);
+}

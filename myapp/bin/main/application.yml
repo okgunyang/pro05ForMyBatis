@@ -30,6 +30,8 @@ spring:
 mybatis:
   config : mybatis-config.xml
   mapper-locations: mapper/*Mapper.xml
-
+  configuration:
+    map-underscore-to-camel-case: true
+    
 file:
   dir: /Users/kim6/Desktop/file/

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.myapp.dao.RoleMapper">
+    <resultMap id="Role" type="com.shop.myapp.dto.RoleDTO">
+        <result property="id" column="id" />
+        <result property="role" column="role" />
+    </resultMap>
+    <select id="getRoleInfo" resultMap="RoleDTO">
+        SELECT
+            id, role
+        FROM
+            role
+        <where>
+            <if test=" role != null and role != '' ">
+                AND role = #{role}
+            </if>
+        </where>
+    </select>
+</mapper>
