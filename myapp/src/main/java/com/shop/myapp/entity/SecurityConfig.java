@@ -21,7 +21,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
             .authorizeRequests()
-                .antMatchers( "/member/login", "/member/singUp", "/member/join", "/member/login_denied", "/member/user_access", "/member/logout", "member/logout_result", "/member/**", "/resources/**").permitAll() // 로그인 권한은 누구나, resources파일도 모든권한
+                .antMatchers( "/member/login", "/member/signUp", "/member/join", "/member/login_denied", "/member/user_access", "/member/logout", "member/logout_result", "/member/**", "/resources/**").permitAll() // 로그인 권한은 누구나, resources파일도 모든권한
                 // USER, ADMIN 접근 허용
                 .antMatchers("/member/**").hasRole("USER")
                 .antMatchers("/admin/**").hasRole("ADMIN")
@@ -35,9 +35,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()//로그인 창
             .logout()
                 .logoutRequestMatcher(new AntPathRequestMatcher("/member/logout"))
-                .invalidateHttpSession(true);
-        
-        	http.csrf().disable();
+                .invalidateHttpSession(true)
+        		.and()
+        		.csrf().disable();
     }
 
     //로그인 인증 처리 메소드 @param auth @throws Exception
